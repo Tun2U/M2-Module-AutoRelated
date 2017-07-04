@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Tun2U_AutoRelated Magento 2 Extension
+ *
+ * @category    Tun2U
+ * @package     Tun2U_AutoRelated
+ * @author      Tun2U Team <info@tun2u.it>
+ * @copyright   Tun2U S.r.l. (https://www.tun2u.it)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <Tun2U_AutoRelated>
+            <general>
+                <enabled>0</enabled>
+                <limit>3</limit>
+                <cache_lifetime>3600</cache_lifetime>
+            </general>
+        </Tun2U_AutoRelated>
+    </default>
+</config>

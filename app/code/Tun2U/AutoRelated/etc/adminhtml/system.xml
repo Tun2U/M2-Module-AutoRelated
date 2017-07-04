@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Tun2U_AutoRelated Magento 2 Extension
+ *
+ * @category    Tun2U
+ * @package     Tun2U_AutoRelated
+ * @author      Tun2U Team <info@tun2u.it>
+ * @copyright   Tun2U S.r.l. (https://www.tun2u.it)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tun2u" translate="label" sortOrder="200">
+            <label>Tun2U</label>
+        </tab>
+        <section id="autorelated" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Auto Related</label>
+            <tab>tun2u</tab>
+            <resource>Tun2U_AutoRelated::config_autorelated</resource>
+            <group id="setup" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Auto Related Setup</label>
+					<field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					  <label>Enable Auto Related Products</label>
+					  <comment>Enable the Tun2U Auto Related Products.</comment>
+					  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					</field>
+					<field id="limit" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					  <label>Related Products Limit</label>
+					  <comment>Insert the number of products want to show.</comment>
+					</field>
+					<field id="cache_lifetime" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					  <label>Related Products Cache Lifetime</label>
+					  <comment>Insert the value of cache lifetime.</comment>
+					</field>
+            </group>
+        </section>
+    </system>
+</config>
