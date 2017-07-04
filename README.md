@@ -10,4 +10,18 @@ Auto generate related products for Magento 2
 
 ## Installing
 
-...
+composer require tun2u/m2-autorelated
+
+##### Manual Installation
+Install Tun2U AutoRelated extensions for Magento2
+ * Download the extension
+ * Unzip the file
+ * Create a folder {Magento root}/app/code/Tun2U/AutoRelated
+ * Copy the content from the unzip folder
+ * Flush cache
+
+##### Using Composer (from Magento Root Dir run)
+
+```
+composer require magepal/magento2-gmailsmtpapp
+```
