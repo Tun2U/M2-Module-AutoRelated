@@ -1,5 +1,9 @@
 # Tun2U Magento 2 AutoRelated extension
 
+[![Latest Stable Version](https://poser.pugx.org/tun2u/m2-autorelated/v/stable)](https://packagist.org/packages/tun2u/m2-autorelated)
+[![Total Downloads](https://poser.pugx.org/tun2u/m2-autorelated/downloads)](https://packagist.org/packages/tun2u/m2-autorelated)
+[![License](https://poser.pugx.org/tun2u/m2-autorelated/license)](https://packagist.org/packages/tun2u/m2-autorelated)
+
 Auto generate related products for Magento 2
 
 ## Features
