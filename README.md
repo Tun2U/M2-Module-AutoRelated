@@ -27,3 +27,29 @@ Install Tun2U AutoRelated extensions for Magento2
 ```
 composer require tun2u/m2-autorelated
 ```
+
+## Requirements
+
+- PHP >= 5.3.0
+
+## Compatibility
+
+- Magento >= 2.0
+
+## Support
+
+If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/Tun2U/M2_AutoRelated/issues).
+
+## Developer
+
+##### Tun2U Team
+* Website: [https://www.tun2u.it](https://www.tun2u.it)
+* Twitter: [@tun2u](https://twitter.com/tun2u)
+
+## Licence
+
+[GNU General Public License, version 3 (GPLv3)](http://opensource.org/licenses/gpl-3.0)
+
+## Copyright
+
+(c) 2017 Tun2U Team
