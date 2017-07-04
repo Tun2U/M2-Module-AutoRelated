@@ -1,5 +1,4 @@
 # Tun2U Magento 2 AutoRelated extension
-=======================================
 
 Auto generate related products for Magento 2
 
