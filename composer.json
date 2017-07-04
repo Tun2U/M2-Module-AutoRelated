@@ -24,7 +24,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Tun2u\\AutoRelated\\": ""
+            "Tun2U\\AutoRelated\\": ""
         }
     }
 }
