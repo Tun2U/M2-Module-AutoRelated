@@ -23,5 +23,5 @@ Install Tun2U AutoRelated extensions for Magento2
 ##### Using Composer (from Magento Root Dir run)
 
 ```
-composer require magepal/magento2-gmailsmtpapp
+composer require tun2u/m2-autorelated
 ```
