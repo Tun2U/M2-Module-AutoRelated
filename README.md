@@ -14,8 +14,6 @@ Auto generate related products for Magento 2
 
 ## Installing
 
-composer require tun2u/m2-autorelated
-
 ##### Manual Installation
 Install Tun2U AutoRelated extensions for Magento2
  * Download the extension
