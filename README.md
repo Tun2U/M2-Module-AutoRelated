@@ -8,7 +8,7 @@ Auto generate related products for Magento 2
 
 ## Features
 
-* Auto generate relted products
+* Auto generate related products
 * Caching related products
 * Supports Magento 2.x
 
