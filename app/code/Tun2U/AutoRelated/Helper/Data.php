@@ -22,6 +22,7 @@ class Data extends AbstractHelper {
     /** @var \Magento\Store\Model\StoreManagerInterface */
     protected $_storeManager;
 
+
     /**
      * @param Context $context
      */
@@ -33,6 +34,7 @@ class Data extends AbstractHelper {
         $this->_storeManager = $storeManager;
     }
 
+
     public function getConfigData($field, $store = null) {
         $store = $this->_storeManager->getStore($store);
         $websiteId = $store->getWebsiteId();
@@ -43,6 +45,7 @@ class Data extends AbstractHelper {
             $store);
         return $result;
     }
+
 
     public function get_enabled($storeId = null) {
         return $this->getConfigData(self::SETTINGS_ENABLED, $storeId);
