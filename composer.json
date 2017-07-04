@@ -5,6 +5,7 @@
     "homepage": "https://github.com/Tun2U/M2_AutoRelated",
     "type": "magento2-module",
     "version": "1.0.0",
+    "minimum-stability": "stable",
     "license": "GPL-3.0",
     "authors": [
         {
