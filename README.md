@@ -23,7 +23,6 @@ Install Tun2U AutoRelated extensions for Magento2
  * Run following command
  ```
  php  bin/magento setup:upgrade
-
  ```
  * Flush cache
 
@@ -32,7 +31,6 @@ Install Tun2U AutoRelated extensions for Magento2
 ```
 composer require tun2u/m2-autorelated
 php  bin/magento setup:upgrade
-
 ```
 
 ## Requirements
