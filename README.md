@@ -20,12 +20,19 @@ Install Tun2U AutoRelated extensions for Magento2
  * Unzip the file
  * Create a folder {Magento root}/app/code/Tun2U/AutoRelated
  * Copy the content from the unzip folder
+ * Run following command
+ ```
+ php  bin/magento setup:upgrade
+
+ ```
  * Flush cache
 
 ##### Using Composer (from Magento Root Dir run)
 
 ```
 composer require tun2u/m2-autorelated
+php  bin/magento setup:upgrade
+
 ```
 
 ## Requirements
