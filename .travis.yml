@@ -1,0 +1,25 @@
+language: php
+
+sudo: false
+
+php:
+    - 5.6
+    - 7.0
+
+install:
+    - echo "{\"http-basic\":{\"repo.magento.com\":{\"username\":\"${MAGENTO_USERNAME}\",\"password\":\"${MAGENTO_PASSWORD}\"}}}" > auth.json
+    - composer install --prefer-dist
+
+script:
+    - php vendor/bin/phpcs --standard=PSR2 Block/ Helper/ Model/ Observer/ Test/
+    - php vendor/bin/phpmd Block/,Helper/,Model/,Observer/,Test/ text cleancode,codesize,controversial,design,naming,unusedcode
+    - php vendor/bin/phpcpd Block/ Helper/ Model/ Observer/ Test/
+    - php vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+    - php vendor/bin/coveralls
+
+env:
+    global:
+        - secure: "KEc4ZhXOlO4xd3bNZtqul7exHPA+KqrOvh0e1QovyUrES94fFSYe96wLeBRwMmhK19TqKg8C7za8ypGkoi2hkGPhh2DP4KXKqnmiTM6IY/Kc5Jqy9TNJGmJDlaY7VdXdw4jpW3NfMpQNkYw/aSnmi4jBFff4CgeswsRAbz65X0OwV5l57ffliTBOTdz0Xjg4xMmtEhhyPGL2izzXyqpki+G+l3C8gCcScmUgBc9l1VcqY2oLHlcPySAbemNDIc4slFB7wJ+ggCYMySUStYUPsP9juy79Yn+U/5qIFMAmkL1HeCT/JN2TmO7fCCBmjVwlBffWoImiJPlTP+JT98Qfq5/R98gYlJqobEDDiHdHwvUPrUKdWQfJ64sn2oZTJPyox1kbSKq/NBSm2KeLZKzHOFYtFZwutUdFIAPBi/FE2PQRomhjeM3rLBvf2iwGMexlk5RU8zoO8plyAniC6DIlFeGtX8vuzX9J3x3CQX8irJ3KW1NvJJTUhQa6a2NgOe4CNVgNrA3of12SZXj1mWVFs4E0gEB4EPR7drHAgUtyglk2OX6NeNNHL0TJzlIbvDVyq+VE7Q6DhBkfw0F1gkEEzqlsPPcDAN0nLjuwLcXUvwDCMtoSqr+iSwqiEOfs58V3j8pifMztFQ+uv3M9mW3rwlMp7FqpulVDZSgRGuL1NNY="
+        - secure: "Vw3YihHZZ68d4YKISCsJ97SYh6YfvDxsc8PE++zZsa2pcqIhdIO8uH0kgW9rEfJcFTmpvcIMPQEUm5aQkdlFB/iOeqfnwbjmNXSBbbMrEPqV03+HNamI9ueB7PmYxhELOvR9BnJf7XgJ4nYZxVOemZ5tCt5nAEd1A2fYQWB8NOBEgyhoAN4dt73lYF+IjphHOtaasI4vFnvycKbewmtlW7kGUFZS7EfyYbPlCjDouDLdXRCFCjBbXPP+7qIuranpRvO1yGrhXUgKslkVMFJ4mYSps/oIiMPKKMS39ndno1lK3VBkUPhsxL9hf2HKBUWGovolfpbbyit9dneI+zeGdMxDr59OfEP7nQdgyMzpkybSNiIkQa8SKKyIYibMBBqqUZbeU5RF8IgK518Apa1UsqNAXywUWjmjEVmv3xcqa3ROd1Lg83EVfwQuZ2XeBPRhhKbrg+r6+k2YVrd+PMZMgQgu6DtcaVVb6A7WJ6KlkA7ODuyP8UaRVUPzeimUK8aYPfqMRaqlOm0LSAMlA6I8F8nHt8KBSyZ4N34eJ6hOvD1v5DIXNcml8qsT/tOS0MLeP42+wXQS6rSb0RvuV0xzCGHDT3IWFQ3ASRBSoNmJ05MnqsHcD2Xi8cfdjgpxSFKm59SOu0NhoIAD7FqsRil2WUIPmJyZQUJN/5S6y1mki5I="

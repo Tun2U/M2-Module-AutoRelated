@@ -18,7 +18,12 @@
         "email": "info@tun2u.it"
     },
     "require": {
-        "php": ">=5.3.0"
+        "php": "~5.6.0|~7.0.0",
+        "magento/module-backend": "100.0.*",
+        "magento/module-catalog": "100.0.*",
+        "magento/module-eav": "100.0.*",
+        "magento/module-layered-navigation": "100.0.*",
+        "magento/framework": "100.0.*"
     },
     "autoload": {
         "files": [
