@@ -19,90 +19,90 @@ use Magento\Framework\Registry;
 use Magento\CatalogInventory\Helper\Stock;
 use Magento\Catalog\Model\Product\Visibility;
 
-class Collection extends AbstractModel {
+class Collection extends AbstractModel
+{
 
-	/**
-	* @var \Magento\Core\Model\Factory\Helper
-	*/
-	protected $_helper;
+    /**
+    * @var \Magento\Core\Model\Factory\Helper
+    */
+    protected $_helper;
 
-	/**
-	* @var \Magento\Framework\App\ObjectManager
-	*/
-	//protected $_objectManager;
+    /**
+    * @var \Magento\Framework\App\ObjectManager
+    */
+    //protected $_objectManager;
 
-	/**
-	* @var \Magento\Framework\Registry
-	*/
-	protected $_registry;
+    /**
+    * @var \Magento\Framework\Registry
+    */
+    protected $_registry;
 
-	/**
-	* @var Stock
-	*/
-  	protected $_stockHelper;
+    /**
+    * @var Stock
+    */
+    protected $_stockHelper;
 
-	/**
-	* @var \Magento\Catalog\Model\Product\Visibility
-	*/
-  	protected $_productVisibility;
-
-
-	public function __construct(
-		Registry $registry,
-		ObjectManagerInterface $helperFactory,
-		Stock $stockHelper,
-		Visibility $productVisibility
-	) {
-		$this->_registry = $registry;
-	  	$this->_helper = $helperFactory;
-	  	$this->_stockHelper = $stockHelper;
-	  	$this->_productVisibility = $productVisibility;
-	}
+    /**
+    * @var \Magento\Catalog\Model\Product\Visibility
+    */
+    protected $_productVisibility;
 
 
- 	public function getRelatedProducts($limit = false) {
- 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
- 		$products = $this->getData('products');
+    public function __construct(
+        Registry $registry,
+        ObjectManagerInterface $helperFactory,
+        Stock $stockHelper,
+        Visibility $productVisibility
+    ) {
+        $this->_registry = $registry;
+        $this->_helper = $helperFactory;
+        $this->_stockHelper = $stockHelper;
+        $this->_productVisibility = $productVisibility;
+    }
 
- 		if (!$products) {
- 			$product = $this->_registry->registry('product');
- 			if ($category = $this->_registry->registry('category')) {
 
- 			} elseif ($product) {
- 				$ids = $product->getCategoryIds();
-				if (!empty($ids)) {
-					$category = $objectManager->get('Magento\Catalog\Model\Category')->load($ids[0]);
- 				}
- 			}
+    public function getRelatedProducts($limit = false)
+    {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $products = $this->getData('products');
 
- 			if ($category) {
- 				if ($limit === false) {
- 						$limit = $this->_helper->get('Tun2U\AutoRelated\Helper\Data')->get_limit();
- 				}
+        if (!$products) {
+            $product = $this->_registry->registry('product');
+            if ($category = $this->_registry->registry('category')) {
+            } elseif ($product) {
+                $ids = $product->getCategoryIds();
+                if (!empty($ids)) {
+                    $category = $objectManager->get('Magento\Catalog\Model\Category')->load($ids[0]);
+                }
+            }
 
-				$products = $objectManager->get('Magento\Catalog\Model\ResourceModel\Product\Collection')
-				->setVisibility($this->_productVisibility->getVisibleInSiteIds())
-				->addAttributeToFilter('status', 1)
-				//->addAttributeToFilter('qty', array('gt' => 0))
-				->addCategoryFilter($category)
-				->addAttributeToSelect('*')
-				->setPageSize($limit);
+            if ($category) {
+                if ($limit === false) {
+                        $limit = $this->_helper->get('Tun2U\AutoRelated\Helper\Data')->get_limit();
+                }
 
-				if ($product) {
-					$products->addAttributeToFilter('entity_id', array(
-						'neq' => $this->_registry->registry('product')->getId())
-					);
-				}
+                $products = $objectManager->get('Magento\Catalog\Model\ResourceModel\Product\Collection')
+                ->setVisibility($this->_productVisibility->getVisibleInSiteIds())
+                ->addAttributeToFilter('status', 1)
+                //->addAttributeToFilter('qty', array('gt' => 0))
+                ->addCategoryFilter($category)
+                ->addAttributeToSelect('*')
+                ->setPageSize($limit);
 
-				$this->_stockHelper->addInStockFilterToCollection($products);
-				$products->getSelect()->order(new \Zend_Db_Expr('RAND()'));
+                if ($product) {
+                    $products->addAttributeToFilter('entity_id', array(
+                        'neq' => $this->_registry->registry('product')->getId()));
+                }
 
- 				$this->setData('related_products', $products);
- 			} else {
- 				return false;
- 			}
- 		}
+                //$this->_stockHelper->addInStockFilterToCollection($products);
+                $products->getSelect()->order(new \Zend_Db_Expr('RAND()'));
 
- 		return $products;
- 	}
+                $this->setData('related_products', $products);
+            } else {
+                return false;
+            }
+        }
+
+        return $products;
+    }
 }
