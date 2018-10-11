@@ -27,6 +27,7 @@ Install Tun2U AutoRelated extensions for Magento2
  php bin/magento setup:di:compile
  php bin/magento cache:flush
  ```
+ * Flush cache
 
 ##### Using Composer (from Magento Root Dir run)
 
@@ -61,4 +62,4 @@ If you encounter any problems or bugs, please create an issue on [GitHub](https:
 
 ## Copyright
 
-(c) 2018 Tun2U S.r.l.
+(c) 2017 Tun2U Team
