@@ -1,15 +1,13 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Tun2U_AutoRelated Magento 2 Extension
- *
  * @category    Tun2U
  * @package     Tun2U_AutoRelated
- * @author      Tun2U Team <info@tun2u.it>
- * @copyright   Tun2U S.r.l. (https://www.tun2u.it)
+ * @author      Tun2U Team <info@tun2u.com>
+ * @copyright   Copyright (c) 2019 Tun2U (https://www.tun2u.com)
  * @license     https://opensource.org/licenses/gpl-3.0.html  GNU General Public License (GPL 3.0)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Tun2U_AutoRelated" setup_version="1.0.1" />
+    <module name="Tun2U_AutoRelated" setup_version="1.0.2" />
 </config>

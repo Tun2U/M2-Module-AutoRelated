@@ -1,12 +1,9 @@
 <?php
-
 /**
- * Tun2U_AutoRelated Magento 2 Extension
- *
  * @category    Tun2U
  * @package     Tun2U_AutoRelated
- * @author      Tun2U Team <info@tun2u.it>
- * @copyright   Tun2U S.r.l. (https://www.tun2u.it)
+ * @author      Tun2U Team <info@tun2u.com>
+ * @copyright   Copyright (c) 2019 Tun2U (https://www.tun2u.com)
  * @license     https://opensource.org/licenses/gpl-3.0.html  GNU General Public License (GPL 3.0)
  */
 

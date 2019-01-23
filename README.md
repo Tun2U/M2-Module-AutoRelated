@@ -48,12 +48,12 @@ php bin/magento cache:flush
 
 ## Support
 
-If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/Tun2U/M2_AutoRelated/issues).
+If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/Tun2U/M2-AutoRelated/issues).
 
 ## Developer
 
 ##### Tun2U Team
-* Website: [https://www.tun2u.it](https://www.tun2u.it)
+* Website: [https://www.tun2u.com](https://www.tun2u.com)
 * Twitter: [@tun2u](https://twitter.com/tun2u)
 
 ## Licence
@@ -62,4 +62,4 @@ If you encounter any problems or bugs, please create an issue on [GitHub](https:
 
 ## Copyright
 
-(c) 2017 Tun2U Team
+(c) 2019 Tun2U Team
