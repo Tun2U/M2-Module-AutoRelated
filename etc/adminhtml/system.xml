@@ -15,8 +15,8 @@
         <tab id="tun2u" translate="label" sortOrder="200">
             <label>Tun2U</label>
         </tab>
-        <section id="autorelated" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-            <class>autorelated</class>
+        <section id="autorelated" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
             <label>Auto Related</label>
             <tab>tun2u</tab>
             <resource>Tun2U_AutoRelated::config_autorelated</resource>
