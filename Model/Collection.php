@@ -69,7 +69,7 @@ class Collection extends AbstractModel
             } elseif ($product) {
                 $ids = $product->getCategoryIds();
                 if (!empty($ids)) {
-                    $category = $objectManager->get('Magento\Catalog\Model\Category')->load($ids[0]);
+                    $category = $objectManager->get('Magento\Catalog\Model\Category')->load($ids[count($ids)-1]);
                 }
             }
 
