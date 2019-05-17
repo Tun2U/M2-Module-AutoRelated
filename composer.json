@@ -1,10 +1,10 @@
 {
-    "name": "tun2u/module-auto-related",
+    "name": "tun2u/m2-autorelated",
     "description": "Auto generate related products for Magento 2",
     "keywords": ["magento2","autorelated","related","products"],
     "homepage": "https://github.com/Tun2U/M2-AutoRelated",
     "type": "magento2-module",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "minimum-stability": "stable",
     "license": "GPL-3.0",
     "authors": [

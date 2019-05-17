@@ -10,4 +10,5 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
     <preference for="Magento\Catalog\Block\Product\ProductList\Related" type="Tun2U\AutoRelated\Block\Product\ProductList\Related" />
+	<preference for="Amasty\Cart\Block\Product\Related" type="Tun2U\AutoRelated\Block\Product\ProductList\Related" />
 </config>
