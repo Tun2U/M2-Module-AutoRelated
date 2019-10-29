@@ -9,6 +9,9 @@
 
 namespace Tun2U\AutoRelated\Block\Product\ProductList;
 
+use Magento\Framework\ObjectManagerInterface;
+use Tun2U\AutoRelated\Model\Collection;
+
 class Related extends \Magento\Catalog\Block\Product\ProductList\Related
 {
 
@@ -42,10 +45,9 @@ class Related extends \Magento\Catalog\Block\Product\ProductList\Related
         \Magento\Catalog\Model\Product\Visibility $catalogProductVisibility,
         \Magento\Checkout\Model\Session $checkoutSession,
         \Magento\Framework\Module\Manager $moduleManager,
-        \Magento\Framework\ObjectManagerInterface $helperFactory,
-        \Tun2U\AutoRelated\Model\Collection $collection,
-        \Tun2U\AutoRelated\Helper\Data $helper,
-        array $data = []
+        array $data = [],
+        ObjectManagerInterface $helperFactory,
+        Collection $collection
     ) {
         $this->_helper = $helperFactory;
         $this->_registry = $context->getRegistry();
@@ -61,12 +63,8 @@ class Related extends \Magento\Catalog\Block\Product\ProductList\Related
             $data
         );
 
-        $this->setBlockType('related');
-
-        $this->helper = $helper;
-
         // Only cache if we have something thats keyable..
-        $_time = $this->helper->get_cache_lifetime();
+        $_time = $this->_helper->get('Tun2U\AutoRelated\Helper\Data')->get_cache_lifetime();
 
         if ($_time > 0 && $cacheKey = $this->_cacheKey()) {
             $this->addData(array(
@@ -75,16 +73,6 @@ class Related extends \Magento\Catalog\Block\Product\ProductList\Related
                 'cache_key'         => $cacheKey,
             ));
         }
-    }
-
-    public function getHelper()
-    {
-        // Amasty Cart
-        if ($this->moduleManager->isOutputEnabled('Amasty_Cart')) {
-            return $this->_helper->get('Amasty\Cart\Helper\Data');
-        }
-
-        return $this->helper;
     }
 
     protected function _cacheKey()
@@ -102,17 +90,13 @@ class Related extends \Magento\Catalog\Block\Product\ProductList\Related
     {
         parent::_prepareData();
 
-        $_enabled = $this->helper->get_enabled();
+        $_enabled = $this->_helper->get('Tun2U\AutoRelated\Helper\Data')->get_enabled();
 
         if ($_enabled && count($this->getItems()) == 0) {
             $_products = $this->_collection->getRelatedProducts();
             if ($_products) {
                 $this->_itemCollection = $_products;
             }
-        }
-
-        foreach ($this->_itemCollection as $product) {
-            $product->setDoNotUseCategoryId(true);
         }
 
         return $this;

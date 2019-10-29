@@ -4,7 +4,7 @@
     "keywords": ["magento2","autorelated","related","products"],
     "homepage": "https://github.com/Tun2U/M2-AutoRelated",
     "type": "magento2-module",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "minimum-stability": "stable",
     "license": "GPL-3.0",
     "authors": [
