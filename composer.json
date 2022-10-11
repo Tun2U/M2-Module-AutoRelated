@@ -1,19 +1,22 @@
 {
     "name": "tun2u/m2-autorelated",
     "description": "Auto generate related products for Magento 2",
-    "keywords": ["magento2","autorelated","related","products"],
+    "keywords": [
+        "magento2",
+        "autorelated",
+        "related",
+        "products"
+    ],
     "homepage": "https://github.com/Tun2U/M2-AutoRelated",
     "type": "magento2-module",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "minimum-stability": "stable",
     "license": "GPL-3.0",
-    "authors": [
-        {
-            "name": "Tun2U S.r.l.",
-            "email": "info@tun2u.it",
-            "homepage": "https://www.tun2u.com"
-        }
-    ],
+    "authors": [{
+        "name": "Tun2U S.r.l.",
+        "email": "info@tun2u.it",
+        "homepage": "https://www.tun2u.com"
+    }],
     "support": {
         "email": "info@tun2u.com"
     },
